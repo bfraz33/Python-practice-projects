@@ -20,5 +20,3 @@ while Q:
     else:
         print(A[random.randint(0,6)])
 #This randmomizes answers to each question.
-
-    quest = input("Please ask another question")
