@@ -4,8 +4,8 @@ class Bill:
     and the period
     """
     def __init__(self, amount, period):
-        self.period = period
-        self.amount = amount
+         self.amount = amount
+         self.period = period
 
 class Roommate:
     """
@@ -15,11 +15,14 @@ class Roommate:
        """
 
     def __init__(self, name, days_in_house):
-        self.days_in_house = days_in_house
         self.name = name
+        self.days_in_house = days_in_house
+        
 
-    def pays(self, bill):
-        return bill.amount / 2
+    def pays(self, bill,roommate2):
+        weight = self.days_in_house / (self.days_in_house + roommate2.days_in_house)
+        to_pay = bill.amount * weight
+        return to_pay
 
 class PdfReport:
     """
@@ -33,11 +36,15 @@ class PdfReport:
         pass
 
 
-the_bill = Bill(amount = 175, period = "February 2023" )
-brandon = Roommate(name = "Brandon", days_in_house=21)
+the_bill = Bill(amount = 180, period = "February 2023" )
+brandon = Roommate(name = "Brandon", days_in_house=22)
 emily = Roommate(name = "Emily", days_in_house=29)
 
-print(brandon.pays(bill=the_bill))
+print("Brandon pays:",brandon.pays(bill=the_bill,roommate2=emily))
+print("Emily pays:", emily.pays(bill=the_bill,roommate2=brandon))
 
-
+""""
+The above code will output what each tenant owes based on the amount
+of days each tenant spends in the house.
+"""
 
