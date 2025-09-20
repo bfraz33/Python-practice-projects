@@ -1,39 +1,37 @@
 
-
-from datetime import datetime
-
-
 TODO = ["Vacuum", "Sweep", "Laundry"]
 
-print("CHORES LIST!\nThere are", len(TODO),"things on the list")
-print("they are:\n")
-for i in TODO:
-    print(i)
 
-TODO.append("Dusting")
+print("CHORE LIST!!")
 
-print("I have updated the list, there are now", len(TODO), "on the list\n")
-for i in TODO:
-    print(i)
+def toDoList(TODO):
+    print("The current todo list,\nhas", len(TODO), "items left on it, here they are\n")
+    for i in TODO:
+        print(i)
 
+def addItem(TODO):
+    TODO.append("Dusting")
+    print("\nI have added another item. Here is the new list\n")
+    for i in TODO:
+        print(i)
 
-choreList ={
-    1:"Vacuum",
-    2:"Sweep",
-    3:"Laundry",
-    4:"Dusting"
-}
-running = True
+choreList = {
+        1:"Vacuum",
+        2:"Sweep",
+        3:"Laundry",
+        4:"Dusting"
+    }
 
-while running:
-    guesse = int(input("#Guess between numbers 1 - 4 to find out what your chore is\nEnter number here:"))
-    running
+def guess():   
+    while True:
+        guess = int(input("\nChoose between numbers 1 - 4 to determine your chore.\nEnter number here:"))
+        if guess not in choreList:
+            print("Invalid number, please try again")
+        else:
+            print(f"Your chore will be", choreList[guess])
 
-    if guesse not in choreList:
-        print("Invalid number, please try again.")
-    else:
-        print(f"Your chore is {choreList[guesse]}")
-
-
-print("\n*This chore was created at* \n", datetime.now())
-
+if __name__=="__main__":
+    toDoList(TODO)
+    addItem(TODO)
+    choreList
+    guess()
