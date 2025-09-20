@@ -17,27 +17,23 @@ for i in TODO:
     print(i)
 
 
-number = 1,2,3,4
+choreList ={
+    1:"Vacuum",
+    2:"Sweep",
+    3:"Laundry",
+    4:"Dusting"
+}
 running = True
 
 while running:
-    guesse = int(input("#Guess between numbers 1 - 4\nEnter number here:"))
+    guesse = int(input("#Guess between numbers 1 - 4 to find out what your chore is\nEnter number here:"))
     running
-    if guesse > 4:
-        print("That is not a valid number, please try again.")
-    if guesse < 1:
-        print("That is not a valid number, please try again.")
-    if guesse == 1:
-        print("You chore is Vacuuming")
-        break
-    if guesse == 2:
-        print("Your chore is Laundry")
-        break
-    if guesse == 3:
-        print("Your chore is Dusting")
-        break
-    if guesse == 4:
-        print("Your chore is Sweeping")
+
+    if guesse not in choreList:
+        print("Invalid number, please try again.")
+    else:
+        print(f"Your chore is {choreList[guesse]}")
+
 
 print("\n*This chore was created at* \n", datetime.now())
 
