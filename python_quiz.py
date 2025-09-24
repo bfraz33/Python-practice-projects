@@ -1,7 +1,7 @@
 Questions = {
     1:{"What character do you use to comment a line in Python?":"#"},
     2:{"Do endents matter in Python?":"Yes"},
-    3:{"What is the extension for puython files?":".py"}
+    3:{"What is the extension for python files?":".py"}
 }
 
 def show_questions():
