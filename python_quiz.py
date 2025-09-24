@@ -10,7 +10,7 @@ def show_questions():
 def Quiz():
     score = 0
 
-    input("Please hit Emter to start:")
+    input("Please hit Enter to start:")
     for qnum, qdict in Questions.items():
         for question, answers in qdict.items():
             user_answer = input(f"{qnum}. {question}")
@@ -21,8 +21,11 @@ def Quiz():
                 print("Wrong❌")
             score -1
 
-    print(f"You are finished! Your score is", score,
-     "out of 3")
+    if score >= 2:
+                print("You scored", score, "out of 3..\nCONGRATS YOU PASSED! ✅🎉")
+
+    else:
+                print("Your scored", score, "out of 3!\nUnfortunately you did not pass")
       
 if __name__=="__main__":
     show_questions()
