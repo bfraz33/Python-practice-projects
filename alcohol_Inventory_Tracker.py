@@ -40,7 +40,7 @@ def qty(dept):
     sold_input = input("How many were sold? (negative for returns, ENTER to quit): ")
 
     if sold_input == "":
-        return 
+        return
 
     try:
         sold = int(sold_input)
